@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         $categories=[
             'Technology',
-            'ENgineering',
+            'Engineering',
             'Government',
             'Medical',
             'Contruction',

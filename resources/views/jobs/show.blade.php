@@ -27,7 +27,8 @@
                 <div class="card-header">Short Info</div>
 
                 <div class="card-body">
-                    <p>Company:{{$job->company->cname}}</P>
+                    <p>Company:<a href="{{route('company.index',[$job->company->id, $job->company->slug])}}">
+                        {{$job->company->cname}}</a></P>
                     <p>Address:{{$job->address}}</P>
 
                     <p>Employment Type:{{$job->type}}</P>

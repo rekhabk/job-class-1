@@ -5,22 +5,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Job Seeker Registration') }}</div>
+                <div class="card-header">{{ __('Employer Registration') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('emp.register') }}">
                         @csrf
 
                         
-                        <input type="hidden" value="seeker" name="user_type">
+                        <input type="hidden" value="employer" name="user_type">
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Company Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('cname') is-invalid @enderror" name="cname" value="{{ old('cname') }}" required autocomplete="cname" autofocus>
 
-                                @error('name')
+                                @error('cname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -45,21 +45,7 @@
 
                         
                         
-                        <div class="form-group row">
-                            <label for="dob" class="col-md-4 ßcol-form-label text-md-right">{{ __('Date of Birth') }}</label>
-
-                            <div class="col-md-6">
-                                <input  type="date" id="datepicker" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required>
-
-                                @if ($errors->has('dob'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('dob') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-
+                       
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -84,19 +70,7 @@
                         </div>
 
 
-                            <div class="form-group row">
-                            <label for="dob" class="col-md-4 ßcol-form-label text-md-right">{{ __('Gender') }}</label>
-
-                            <div class="col-md-6">
-                                <input type="radio" name="gender" value="male" required="">Male
-                                <input type="radio" name="gender" value="female" >Female 
-                                @if ($errors->has('gender'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('gender') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                           
 
 
                         <div class="form-group row mb-0">
